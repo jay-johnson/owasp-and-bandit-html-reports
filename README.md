@@ -1,2 +1,4 @@
-# owasp-and-bandit-html-reports
-OWASP and Bandit HTML reports from scans in https://github.com/jay-johnson/owasp-jenkins
+# Security Testing Reports
+
+An archive of the HTML reports created from:
+https://github.com/jay-johnson/owasp-jenkins
