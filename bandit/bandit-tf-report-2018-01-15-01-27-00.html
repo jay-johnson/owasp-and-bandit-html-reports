@@ -1,0 +1,3120 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+    Bandit Report
+</title>
+
+<style>
+
+html * {
+    font-family: "Arial", sans-serif;
+}
+
+pre {
+    font-family: "Monaco", monospace;
+}
+
+.bordered-box {
+    border: 1px solid black;
+    padding-top:.5em;
+    padding-bottom:.5em;
+    padding-left:1em;
+}
+
+.metrics-box {
+    font-size: 1.1em;
+    line-height: 130%;
+}
+
+.metrics-title {
+    font-size: 1.5em;
+    font-weight: 500;
+    margin-bottom: .25em;
+}
+
+.issue-description {
+    font-size: 1.3em;
+    font-weight: 500;
+}
+
+.candidate-issues {
+    margin-left: 2em;
+    border-left: solid 1px; LightGray;
+    padding-left: 5%;
+    margin-top: .2em;
+    margin-bottom: .2em;
+}
+
+.issue-block {
+    border: 1px solid LightGray;
+    padding-left: .5em;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    margin-bottom: .5em;
+}
+
+.issue-sev-high {
+    background-color: Pink;
+}
+
+.issue-sev-medium {
+    background-color: NavajoWhite;
+}
+
+.issue-sev-low {
+    background-color: LightCyan;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="metrics">
+    <div class="metrics-box bordered-box">
+        <div class="metrics-title">
+            Metrics:<br>
+        </div>
+        Total lines of code: <span id="loc">583109</span><br>
+        Total lines skipped (#nosec): <span id="nosec">0</span>
+    </div>
+</div>
+
+
+
+
+<br>
+<div id="results">
+    
+<div id="issue-0">
+<div class="issue-block issue-sev-high">
+    <b>blacklist: </b> The input method in Python 2 will read from standard input, evaluate and run the resulting string as python source code. This is similar, though in many ways worse, then using eval. On Python 2, use raw_input instead, input is safe in Python 3.<br>
+    <b>Test ID:</b> B322<br>
+    <b>Severity: </b>HIGH<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/configure.py" target="_blank">/opt/scanrepo/configure.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b322-input" target="_blank">http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b322-input</a><br>
+
+<div class="code">
+<pre>
+82	    except NameError:
+83	      answer = input(question)  # pylint: disable=bad-builtin
+84	  except EOFError:
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-1">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/contrib/eager/python/examples/gan/mnist.py" target="_blank">/opt/scanrepo/tensorflow/contrib/eager/python/examples/gan/mnist.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+319	      type=str,
+320	      default='/tmp/tensorflow/mnist/input_data',
+321	      help=('Directory for storing input data (default '
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-2">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/contrib/eager/python/examples/gan/mnist.py" target="_blank">/opt/scanrepo/tensorflow/contrib/eager/python/examples/gan/mnist.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+344	      type=str,
+345	      default='/tmp/tensorflow/mnist/checkpoints/',
+346	      metavar='DIR',
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-3">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/contrib/eager/python/examples/mnist/mnist.py" target="_blank">/opt/scanrepo/tensorflow/contrib/eager/python/examples/mnist/mnist.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+224	      type=str,
+225	      default='/tmp/tensorflow/mnist/input_data',
+226	      help='Directory for storing input data')
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-4">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/contrib/eager/python/examples/mnist/mnist.py" target="_blank">/opt/scanrepo/tensorflow/contrib/eager/python/examples/mnist/mnist.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+247	      type=str,
+248	      default='/tmp/tensorflow/mnist/checkpoints/',
+249	      metavar='N',
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-5">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/contrib/eager/python/examples/rnn_colorbot/rnn_colorbot.py" target="_blank">/opt/scanrepo/tensorflow/contrib/eager/python/examples/rnn_colorbot/rnn_colorbot.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+299	      type=str,
+300	      default="/tmp/rnn_colorbot/",
+301	      help="Directory to download data files and save logs.")
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-6">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Audit url open for permitted schemes. Allowing use of file:/ or custom schemes is often unexpected.<br>
+    <b>Test ID:</b> B310<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/contrib/gan/python/eval/python/classifier_metrics_impl.py" target="_blank">/opt/scanrepo/tensorflow/contrib/gan/python/eval/python/classifier_metrics_impl.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b310-urllib_urlopen" target="_blank">http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b310-urllib_urlopen</a><br>
+
+<div class="code">
+<pre>
+197	    sys.stdout.flush()
+198	  tar_filename, _ = urllib.request.urlretrieve(url, reporthook=_progress)
+199	  with tarfile.open(tar_filename, 'r:gz') as tar:
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-7">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/contrib/kfac/examples/convnet_mnist_main.py" target="_blank">/opt/scanrepo/tensorflow/contrib/kfac/examples/convnet_mnist_main.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+48	      type=str,
+49	      default="/tmp/mnist",
+50	      help="Directory to store dataset in.")
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-8">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/contrib/kfac/examples/mlp_mnist_main.py" target="_blank">/opt/scanrepo/tensorflow/contrib/kfac/examples/mlp_mnist_main.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+47	      type=str,
+48	      default="/tmp/mnist",
+49	      help="Directory to store dataset in.")
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-9">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Audit url open for permitted schemes. Allowing use of file:/ or custom schemes is often unexpected.<br>
+    <b>Test ID:</b> B310<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/contrib/learn/python/learn/datasets/base.py" target="_blank">/opt/scanrepo/tensorflow/contrib/learn/python/learn/datasets/base.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b310-urllib_urlopen" target="_blank">http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b310-urllib_urlopen</a><br>
+
+<div class="code">
+<pre>
+189	def urlretrieve_with_retry(url, filename=None):
+190	  return urllib.request.urlretrieve(url, filename)
+191	
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-10">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/contrib/learn/python/learn/datasets/base_test.py" target="_blank">/opt/scanrepo/tensorflow/contrib/learn/python/learn/datasets/base_test.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+36	        ]
+37	        base.urlretrieve_with_retry("http://dummy.com", "/tmp/dummy")
+38	
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-11">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/contrib/learn/python/learn/datasets/base_test.py" target="_blank">/opt/scanrepo/tensorflow/contrib/learn/python/learn/datasets/base_test.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+57	        with self.assertRaises(IOError):
+58	          base.urlretrieve_with_retry("http://dummy.com", "/tmp/dummy")
+59	
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-12">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/contrib/learn/python/learn/datasets/base_test.py" target="_blank">/opt/scanrepo/tensorflow/contrib/learn/python/learn/datasets/base_test.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+73	        with self.assertRaises(IOError):
+74	          base.urlretrieve_with_retry("http://dummy.com", "/tmp/dummy")
+75	
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-13">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/contrib/learn/python/learn/experiment_test.py" target="_blank">/opt/scanrepo/tensorflow/contrib/learn/python/learn/experiment_test.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+684	    # The default value when model_dir is not on GCS is 1
+685	    estimator = core_estimator.Estimator(dummy_model_fn, '/tmp/dummy')
+686	    ex = experiment.Experiment(
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-14">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/contrib/learn/python/learn/learn_runner_test.py" target="_blank">/opt/scanrepo/tensorflow/contrib/learn/python/learn/learn_runner_test.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+36	
+37	_MODIR_DIR = "/tmp"
+38	_HPARAMS = hparam_lib.HParams(learning_rate=0.01)
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-15">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Pickle library appears to be in use, possible security issue.<br>
+    <b>Test ID:</b> B301<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/contrib/learn/python/learn/preprocessing/text.py" target="_blank">/opt/scanrepo/tensorflow/contrib/learn/python/learn/preprocessing/text.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b301-pickle" target="_blank">http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b301-pickle</a><br>
+
+<div class="code">
+<pre>
+225	    with gfile.Open(filename, 'rb') as f:
+226	      return pickle.loads(f.read())
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-16">
+<div class="issue-block issue-sev-high">
+    <b>subprocess_popen_with_shell_equals_true: </b> subprocess call with shell=True identified, security issue.<br>
+    <b>Test ID:</b> B602<br>
+    <b>Severity: </b>HIGH<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/contrib/lite/python/lite.py" target="_blank">/opt/scanrepo/tensorflow/contrib/lite/python/lite.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/subprocess_popen_with_shell_equals_true.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/subprocess_popen_with_shell_equals_true.html</a><br>
+
+<div class="code">
+<pre>
+108	        cmdline,
+109	        shell=True,
+110	        stdout=subprocess.PIPE,
+111	        stderr=subprocess.STDOUT,
+112	        close_fds=True)
+113	    stdout, stderr = proc.communicate()
+114	    exitcode = proc.returncode
+115	    if exitcode == 0:
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-17">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Use of insecure and deprecated function (mktemp).<br>
+    <b>Test ID:</b> B306<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/contrib/lite/schema/upgrade_schema_test.py" target="_blank">/opt/scanrepo/tensorflow/contrib/lite/schema/upgrade_schema_test.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b306-mktemp_q" target="_blank">http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b306-mktemp_q</a><br>
+
+<div class="code">
+<pre>
+256	    converter = upgrade_schema_lib.Converter()
+257	    non_existent = tempfile.mktemp(suffix=".json")
+258	    with self.assertRaisesRegexp(IOError, "No such file or directory"):
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-18">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Use of insecure and deprecated function (mktemp).<br>
+    <b>Test ID:</b> B306<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/contrib/lite/schema/upgrade_schema_test.py" target="_blank">/opt/scanrepo/tensorflow/contrib/lite/schema/upgrade_schema_test.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b306-mktemp_q" target="_blank">http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b306-mktemp_q</a><br>
+
+<div class="code">
+<pre>
+262	    converter = upgrade_schema_lib.Converter()
+263	    invalid_extension = tempfile.mktemp(suffix=".foo")
+264	    with self.assertRaisesRegexp(ValueError, "Invalid extension on input"):
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-19">
+<div class="issue-block issue-sev-high">
+    <b>start_process_with_a_shell: </b> Starting a process with a shell, possible injection detected, security issue.<br>
+    <b>Test ID:</b> B605<br>
+    <b>Severity: </b>HIGH<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/contrib/lite/testing/generate_examples.py" target="_blank">/opt/scanrepo/tensorflow/contrib/lite/testing/generate_examples.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/start_process_with_a_shell.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/start_process_with_a_shell.html</a><br>
+
+<div class="code">
+<pre>
+319	            stdout_file.name))
+320	    exit_code = os.system(cmd)
+321	    log = (
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-20">
+<div class="issue-block issue-sev-high">
+    <b>start_process_with_a_shell: </b> Starting a process with a shell, possible injection detected, security issue.<br>
+    <b>Test ID:</b> B605<br>
+    <b>Severity: </b>HIGH<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/contrib/lite/toco/python/toco_from_protos_test.py" target="_blank">/opt/scanrepo/tensorflow/contrib/lite/toco/python/toco_from_protos_test.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/start_process_with_a_shell.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/start_process_with_a_shell.html</a><br>
+
+<div class="code">
+<pre>
+72	      ])
+73	      exitcode = os.system(cmdline)
+74	      if exitcode == 0:
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-21">
+<div class="issue-block issue-sev-high">
+    <b>start_process_with_a_shell: </b> Starting a process with a shell, possible injection detected, security issue.<br>
+    <b>Test ID:</b> B605<br>
+    <b>Severity: </b>HIGH<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/contrib/lite/tools/visualize.py" target="_blank">/opt/scanrepo/tensorflow/contrib/lite/tools/visualize.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/start_process_with_a_shell.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/start_process_with_a_shell.html</a><br>
+
+<div class="code">
+<pre>
+290	    print(cmd)
+291	    os.system(cmd)
+292	    real_output = ("/tmp/"+ os.path.splitext(os.path.split(tflite_input)[-1])[0]
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-22">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/contrib/lite/tools/visualize.py" target="_blank">/opt/scanrepo/tensorflow/contrib/lite/tools/visualize.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+291	    os.system(cmd)
+292	    real_output = ("/tmp/"+ os.path.splitext(os.path.split(tflite_input)[-1])[0]
+293	                   + ".json")
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-23">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/contrib/model_pruning/examples/cifar10/cifar10_eval.py" target="_blank">/opt/scanrepo/tensorflow/contrib/model_pruning/examples/cifar10/cifar10_eval.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+148	      type=str,
+149	      default='/tmp/cifar10_eval',
+150	      help='Directory where to write event logs.')
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-24">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/contrib/model_pruning/examples/cifar10/cifar10_eval.py" target="_blank">/opt/scanrepo/tensorflow/contrib/model_pruning/examples/cifar10/cifar10_eval.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+158	      type=str,
+159	      default='/tmp/cifar10_train',
+160	      help="""Directory where to read model checkpoints.""")
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-25">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/contrib/model_pruning/examples/cifar10/cifar10_pruning.py" target="_blank">/opt/scanrepo/tensorflow/contrib/model_pruning/examples/cifar10/cifar10_pruning.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+53	BATCH_SIZE = 128
+54	DATA_DIR = '/tmp/cifar10_data'
+55	
+56	# Constants describing the training process.
+57	MOVING_AVERAGE_DECAY = 0.9999     # The decay to use for the moving average.
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-26">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Audit url open for permitted schemes. Allowing use of file:/ or custom schemes is often unexpected.<br>
+    <b>Test ID:</b> B310<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/contrib/model_pruning/examples/cifar10/cifar10_pruning.py" target="_blank">/opt/scanrepo/tensorflow/contrib/model_pruning/examples/cifar10/cifar10_pruning.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b310-urllib_urlopen" target="_blank">http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b310-urllib_urlopen</a><br>
+
+<div class="code">
+<pre>
+389	      sys.stdout.flush()
+390	    filepath, _ = urllib.request.urlretrieve(DATA_URL, filepath, _progress)
+391	    print()
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-27">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/contrib/model_pruning/examples/cifar10/cifar10_train.py" target="_blank">/opt/scanrepo/tensorflow/contrib/model_pruning/examples/cifar10/cifar10_train.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+139	      type=str,
+140	      default='/tmp/cifar10_train',
+141	      help='Directory where to write event logs and checkpoint.')
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-28">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/contrib/receptive_field/python/util/examples/write_inception_resnet_v2_graph.py" target="_blank">/opt/scanrepo/tensorflow/contrib/receptive_field/python/util/examples/write_inception_resnet_v2_graph.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+52	      type=str,
+53	      default='/tmp',
+54	      help='Directory where graph will be saved.')
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-29">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Use of insecure and deprecated function (mktemp).<br>
+    <b>Test ID:</b> B306<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/contrib/rnn/python/tools/checkpoint_convert_test.py" target="_blank">/opt/scanrepo/tensorflow/contrib/rnn/python/tools/checkpoint_convert_test.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b306-mktemp_q" target="_blank">http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b306-mktemp_q</a><br>
+
+<div class="code">
+<pre>
+34	  def setUp(self):
+35	    self._old_ckpt_path = tempfile.mktemp()
+36	    self._new_ckpt_path = tempfile.mktemp()
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-30">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Use of insecure and deprecated function (mktemp).<br>
+    <b>Test ID:</b> B306<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/contrib/rnn/python/tools/checkpoint_convert_test.py" target="_blank">/opt/scanrepo/tensorflow/contrib/rnn/python/tools/checkpoint_convert_test.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b306-mktemp_q" target="_blank">http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b306-mktemp_q</a><br>
+
+<div class="code">
+<pre>
+35	    self._old_ckpt_path = tempfile.mktemp()
+36	    self._new_ckpt_path = tempfile.mktemp()
+37	    ops.reset_default_graph()
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-31">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/contrib/session_bundle/example/export_half_plus_two.py" target="_blank">/opt/scanrepo/tensorflow/contrib/session_bundle/example/export_half_plus_two.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+73	    # vocabulary files).
+74	    original_asset_path = tf.constant("/tmp/original/export/assets")
+75	    # Ops reading asset files should reference the asset_path tensor
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-32">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/contrib/session_bundle/example/export_half_plus_two.py" target="_blank">/opt/scanrepo/tensorflow/contrib/session_bundle/example/export_half_plus_two.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+149	      type=str,
+150	      default="/tmp/half_plus_two",
+151	      help="Directory where to export inference model."
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-33">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/contrib/summary/summary_ops_test.py" target="_blank">/opt/scanrepo/tensorflow/contrib/summary/summary_ops_test.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+62	  def testInvalidDirectory(self):
+63	    logdir = '/tmp/apath/that/doesnt/exist'
+64	    self.assertFalse(gfile.Exists(logdir))
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-34">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Use of insecure MD2, MD4, or MD5 hash function.<br>
+    <b>Test ID:</b> B303<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/contrib/training/python/training/device_setter.py" target="_blank">/opt/scanrepo/tensorflow/contrib/training/python/training/device_setter.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b303-md5" target="_blank">http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b303-md5</a><br>
+
+<div class="code">
+<pre>
+51	    # between runs.
+52	    n = int(hashlib.md5(key).hexdigest(), 16)
+53	    return int(n % self._num_tasks)
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-35">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/examples/how_tos/reading_data/convert_to_records.py" target="_blank">/opt/scanrepo/tensorflow/examples/how_tos/reading_data/convert_to_records.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+87	      type=str,
+88	      default='/tmp/data',
+89	      help='Directory to download data files and write the converted result'
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-36">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/examples/how_tos/reading_data/fully_connected_preloaded.py" target="_blank">/opt/scanrepo/tensorflow/examples/how_tos/reading_data/fully_connected_preloaded.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+178	      type=str,
+179	      default='/tmp/data',
+180	      help='Directory to put the training data.'
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-37">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/examples/how_tos/reading_data/fully_connected_preloaded_var.py" target="_blank">/opt/scanrepo/tensorflow/examples/how_tos/reading_data/fully_connected_preloaded_var.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+189	      type=str,
+190	      default='/tmp/data',
+191	      help='Directory to put the training data.'
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-38">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/examples/how_tos/reading_data/fully_connected_reader.py" target="_blank">/opt/scanrepo/tensorflow/examples/how_tos/reading_data/fully_connected_reader.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+214	      type=str,
+215	      default='/tmp/data',
+216	      help='Directory with the training data.'
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-39">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Audit url open for permitted schemes. Allowing use of file:/ or custom schemes is often unexpected.<br>
+    <b>Test ID:</b> B310<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/examples/image_retraining/retrain.py" target="_blank">/opt/scanrepo/tensorflow/examples/image_retraining/retrain.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b310-urllib_urlopen" target="_blank">http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b310-urllib_urlopen</a><br>
+
+<div class="code">
+<pre>
+343	
+344	    filepath, _ = urllib.request.urlretrieve(data_url, filepath, _progress)
+345	    print()
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-40">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/examples/image_retraining/retrain.py" target="_blank">/opt/scanrepo/tensorflow/examples/image_retraining/retrain.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+1193	      type=str,
+1194	      default='/tmp/output_graph.pb',
+1195	      help='Where to save the trained graph.'
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-41">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/examples/image_retraining/retrain.py" target="_blank">/opt/scanrepo/tensorflow/examples/image_retraining/retrain.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+1199	      type=str,
+1200	      default='/tmp/intermediate_graph/',
+1201	      help='Where to save the intermediate graphs.'
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-42">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/examples/image_retraining/retrain.py" target="_blank">/opt/scanrepo/tensorflow/examples/image_retraining/retrain.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+1214	      type=str,
+1215	      default='/tmp/output_labels.txt',
+1216	      help='Where to save the trained graph\'s labels.'
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-43">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/examples/image_retraining/retrain.py" target="_blank">/opt/scanrepo/tensorflow/examples/image_retraining/retrain.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+1220	      type=str,
+1221	      default='/tmp/retrain_logs',
+1222	      help='Where to save summary logs for TensorBoard.'
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-44">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/examples/image_retraining/retrain.py" target="_blank">/opt/scanrepo/tensorflow/examples/image_retraining/retrain.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+1294	      type=str,
+1295	      default='/tmp/imagenet',
+1296	      help="""\
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-45">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/examples/image_retraining/retrain.py" target="_blank">/opt/scanrepo/tensorflow/examples/image_retraining/retrain.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+1304	      type=str,
+1305	      default='/tmp/bottleneck',
+1306	      help='Path to cache bottleneck layer values as files.'
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-46">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/examples/learn/hdf5_classification.py" target="_blank">/opt/scanrepo/tensorflow/examples/learn/hdf5_classification.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+38	  # demonstration here.
+39	  h5f = h5py.File('/tmp/test_hdf5.h5', 'w')
+40	  h5f.create_dataset('X_train', data=x_train)
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-47">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/examples/learn/hdf5_classification.py" target="_blank">/opt/scanrepo/tensorflow/examples/learn/hdf5_classification.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+45	
+46	  h5f = h5py.File('/tmp/test_hdf5.h5', 'r')
+47	  x_train = np.array(h5f['X_train'])
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-48">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Audit url open for permitted schemes. Allowing use of file:/ or custom schemes is often unexpected.<br>
+    <b>Test ID:</b> B310<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/examples/learn/iris.py" target="_blank">/opt/scanrepo/tensorflow/examples/learn/iris.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b310-urllib_urlopen" target="_blank">http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b310-urllib_urlopen</a><br>
+
+<div class="code">
+<pre>
+40	  if not os.path.exists(file_name):
+41	    raw = urllib.urlopen(download_url).read()
+42	    with open(file_name, 'w') as f:
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-49">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/examples/learn/mnist.py" target="_blank">/opt/scanrepo/tensorflow/examples/learn/mnist.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+100	  ### Download and load MNIST dataset.
+101	  mnist = tf.contrib.learn.datasets.DATASETS['mnist']('/tmp/mnist')
+102	  train_input_fn = tf.estimator.inputs.numpy_input_fn(
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-50">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/examples/learn/random_forest_mnist.py" target="_blank">/opt/scanrepo/tensorflow/examples/learn/random_forest_mnist.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+102	      type=str,
+103	      default='/tmp/data/',
+104	      help='Directory for storing data'
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-51">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/examples/learn/resnet.py" target="_blank">/opt/scanrepo/tensorflow/examples/learn/resnet.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+172	  # Download and load MNIST data.
+173	  mnist = tf.contrib.learn.datasets.DATASETS['mnist']('/tmp/mnist')
+174	
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-52">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/examples/saved_model/saved_model_half_plus_two.py" target="_blank">/opt/scanrepo/tensorflow/examples/saved_model/saved_model_half_plus_two.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+146	    # SavedModel.
+147	    original_assets_directory = "/tmp/original/export/assets"
+148	    original_assets_filename = "foo.txt"
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-53">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/examples/saved_model/saved_model_half_plus_two.py" target="_blank">/opt/scanrepo/tensorflow/examples/saved_model/saved_model_half_plus_two.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+234	      type=str,
+235	      default="/tmp/saved_model_half_plus_two",
+236	      help="Directory where to output SavedModel.")
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-54">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/examples/saved_model/saved_model_half_plus_two.py" target="_blank">/opt/scanrepo/tensorflow/examples/saved_model/saved_model_half_plus_two.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+239	      type=str,
+240	      default="/tmp/saved_model_half_plus_two_pbtxt",
+241	      help="Directory where to output the text format of SavedModel.")
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-55">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/examples/saved_model/saved_model_half_plus_two.py" target="_blank">/opt/scanrepo/tensorflow/examples/saved_model/saved_model_half_plus_two.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+244	      type=str,
+245	      default="/tmp/saved_model_half_plus_two_main_op",
+246	      help="Directory where to output the SavedModel with a main op.")
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-56">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/examples/speech_commands/generate_streaming_test_wav.py" target="_blank">/opt/scanrepo/tensorflow/examples/speech_commands/generate_streaming_test_wav.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+181	      type=str,
+182	      default='/tmp/speech_dataset',
+183	      help="""\
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-57">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/examples/speech_commands/generate_streaming_test_wav.py" target="_blank">/opt/scanrepo/tensorflow/examples/speech_commands/generate_streaming_test_wav.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+256	      type=str,
+257	      default='/tmp/speech_commands_train/streaming_test.wav',
+258	      help='File to save the generated test audio to.')
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-58">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/examples/speech_commands/generate_streaming_test_wav.py" target="_blank">/opt/scanrepo/tensorflow/examples/speech_commands/generate_streaming_test_wav.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+261	      type=str,
+262	      default='/tmp/speech_commands_train/streaming_test_labels.txt',
+263	      help='File to save the generated test labels to.')
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-59">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Audit url open for permitted schemes. Allowing use of file:/ or custom schemes is often unexpected.<br>
+    <b>Test ID:</b> B310<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/examples/speech_commands/input_data.py" target="_blank">/opt/scanrepo/tensorflow/examples/speech_commands/input_data.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b310-urllib_urlopen" target="_blank">http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b310-urllib_urlopen</a><br>
+
+<div class="code">
+<pre>
+192	      try:
+193	        filepath, _ = urllib.request.urlretrieve(data_url, filepath, _progress)
+194	      except:
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-60">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/examples/speech_commands/train.py" target="_blank">/opt/scanrepo/tensorflow/examples/speech_commands/train.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+296	      type=str,
+297	      default='/tmp/speech_dataset/',
+298	      help="""\
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-61">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/examples/speech_commands/train.py" target="_blank">/opt/scanrepo/tensorflow/examples/speech_commands/train.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+393	      type=str,
+394	      default='/tmp/retrain_logs',
+395	      help='Where to save summary logs for TensorBoard.')
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-62">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/examples/speech_commands/train.py" target="_blank">/opt/scanrepo/tensorflow/examples/speech_commands/train.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+403	      type=str,
+404	      default='/tmp/speech_commands_train',
+405	      help='Directory to write event logs and checkpoint.')
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-63">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Audit url open for permitted schemes. Allowing use of file:/ or custom schemes is often unexpected.<br>
+    <b>Test ID:</b> B310<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/examples/tutorials/estimators/abalone.py" target="_blank">/opt/scanrepo/tensorflow/examples/tutorials/estimators/abalone.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b310-urllib_urlopen" target="_blank">http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b310-urllib_urlopen</a><br>
+
+<div class="code">
+<pre>
+42	    train_file = tempfile.NamedTemporaryFile(delete=False)
+43	    urllib.request.urlretrieve(
+44	        "http://download.tensorflow.org/data/abalone_train.csv",
+45	        train_file.name)
+46	    train_file_name = train_file.name
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-64">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Audit url open for permitted schemes. Allowing use of file:/ or custom schemes is often unexpected.<br>
+    <b>Test ID:</b> B310<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/examples/tutorials/estimators/abalone.py" target="_blank">/opt/scanrepo/tensorflow/examples/tutorials/estimators/abalone.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b310-urllib_urlopen" target="_blank">http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b310-urllib_urlopen</a><br>
+
+<div class="code">
+<pre>
+53	    test_file = tempfile.NamedTemporaryFile(delete=False)
+54	    urllib.request.urlretrieve(
+55	        "http://download.tensorflow.org/data/abalone_test.csv", test_file.name)
+56	    test_file_name = test_file.name
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-65">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Audit url open for permitted schemes. Allowing use of file:/ or custom schemes is often unexpected.<br>
+    <b>Test ID:</b> B310<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/examples/tutorials/estimators/abalone.py" target="_blank">/opt/scanrepo/tensorflow/examples/tutorials/estimators/abalone.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b310-urllib_urlopen" target="_blank">http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b310-urllib_urlopen</a><br>
+
+<div class="code">
+<pre>
+63	    predict_file = tempfile.NamedTemporaryFile(delete=False)
+64	    urllib.request.urlretrieve(
+65	        "http://download.tensorflow.org/data/abalone_predict.csv",
+66	        predict_file.name)
+67	    predict_file_name = predict_file.name
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-66">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/examples/tutorials/input_fn/boston.py" target="_blank">/opt/scanrepo/tensorflow/examples/tutorials/input_fn/boston.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+58	                                        hidden_units=[10, 10],
+59	                                        model_dir="/tmp/boston_model")
+60	
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-67">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/examples/tutorials/layers/cnn_mnist.py" target="_blank">/opt/scanrepo/tensorflow/examples/tutorials/layers/cnn_mnist.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+127	  mnist_classifier = tf.estimator.Estimator(
+128	      model_fn=cnn_model_fn, model_dir="/tmp/mnist_convnet_model")
+129	
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-68">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/examples/tutorials/mnist/fully_connected_feed.py" target="_blank">/opt/scanrepo/tensorflow/examples/tutorials/mnist/fully_connected_feed.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+259	      type=str,
+260	      default=os.path.join(os.getenv('TEST_TMPDIR', '/tmp'),
+261	                           'tensorflow/mnist/input_data'),
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-69">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/examples/tutorials/mnist/fully_connected_feed.py" target="_blank">/opt/scanrepo/tensorflow/examples/tutorials/mnist/fully_connected_feed.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+266	      type=str,
+267	      default=os.path.join(os.getenv('TEST_TMPDIR', '/tmp'),
+268	                           'tensorflow/mnist/logs/fully_connected_feed'),
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-70">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/examples/tutorials/mnist/mnist_deep.py" target="_blank">/opt/scanrepo/tensorflow/examples/tutorials/mnist/mnist_deep.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+172	  parser.add_argument('--data_dir', type=str,
+173	                      default='/tmp/tensorflow/mnist/input_data',
+174	                      help='Directory for storing input data')
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-71">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/examples/tutorials/mnist/mnist_softmax.py" target="_blank">/opt/scanrepo/tensorflow/examples/tutorials/mnist/mnist_softmax.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+74	  parser = argparse.ArgumentParser()
+75	  parser.add_argument('--data_dir', type=str, default='/tmp/tensorflow/mnist/input_data',
+76	                      help='Directory for storing input data')
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-72">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/examples/tutorials/mnist/mnist_softmax_xla.py" target="_blank">/opt/scanrepo/tensorflow/examples/tutorials/mnist/mnist_softmax_xla.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+100	      type=str,
+101	      default='/tmp/tensorflow/mnist/input_data',
+102	      help='Directory for storing input data')
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-73">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/examples/tutorials/mnist/mnist_with_summaries.py" target="_blank">/opt/scanrepo/tensorflow/examples/tutorials/mnist/mnist_with_summaries.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+202	      type=str,
+203	      default=os.path.join(os.getenv('TEST_TMPDIR', '/tmp'),
+204	                           'tensorflow/mnist/input_data'),
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-74">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/examples/tutorials/mnist/mnist_with_summaries.py" target="_blank">/opt/scanrepo/tensorflow/examples/tutorials/mnist/mnist_with_summaries.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+208	      type=str,
+209	      default=os.path.join(os.getenv('TEST_TMPDIR', '/tmp'),
+210	                           'tensorflow/mnist/logs/mnist_with_summaries'),
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-75">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/examples/tutorials/monitors/iris_monitors.py" target="_blank">/opt/scanrepo/tensorflow/examples/tutorials/monitors/iris_monitors.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+69	      n_classes=3,
+70	      model_dir="/tmp/iris_model",
+71	      config=tf.contrib.learn.RunConfig(save_checkpoints_secs=1))
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-76">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Audit url open for permitted schemes. Allowing use of file:/ or custom schemes is often unexpected.<br>
+    <b>Test ID:</b> B310<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/examples/tutorials/word2vec/word2vec_basic.py" target="_blank">/opt/scanrepo/tensorflow/examples/tutorials/word2vec/word2vec_basic.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b310-urllib_urlopen" target="_blank">http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b310-urllib_urlopen</a><br>
+
+<div class="code">
+<pre>
+41	  if not os.path.exists(local_filename):
+42	    local_filename, _ = urllib.request.urlretrieve(url + filename,
+43	                                                   local_filename)
+44	  statinfo = os.stat(local_filename)
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-77">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Audit url open for permitted schemes. Allowing use of file:/ or custom schemes is often unexpected.<br>
+    <b>Test ID:</b> B310<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/java/maven/tensorflow-android/update.py" target="_blank">/opt/scanrepo/tensorflow/java/maven/tensorflow-android/update.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b310-urllib_urlopen" target="_blank">http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b310-urllib_urlopen</a><br>
+
+<div class="code">
+<pre>
+42	  """Load the contents of the URL as a json object."""
+43	  return json.load(urllib2.urlopen(url))
+44	
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-78">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Audit url open for permitted schemes. Allowing use of file:/ or custom schemes is often unexpected.<br>
+    <b>Test ID:</b> B310<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/java/maven/tensorflow-android/update.py" target="_blank">/opt/scanrepo/tensorflow/java/maven/tensorflow-android/update.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b310-urllib_urlopen" target="_blank">http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b310-urllib_urlopen</a><br>
+
+<div class="code">
+<pre>
+133	  with open('%s/tensorflow.aar' % args.dir, 'w') as f:
+134	    aar = urllib2.urlopen(aar_url)
+135	    f.write(aar.read())
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-79">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_bind_all_interfaces: </b> Possible binding to all interfaces.<br>
+    <b>Test ID:</b> B104<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/client/notebook.py" target="_blank">/opt/scanrepo/tensorflow/python/client/notebook.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_bind_all_interfaces.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_bind_all_interfaces.html</a><br>
+
+<div class="code">
+<pre>
+72	      from IPython.lib import passwd  # pylint: disable=g-import-not-at-top
+73	      notebookapp.ip = "0.0.0.0"
+74	      notebookapp.password = passwd(FLAGS.password)
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-80">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_bind_all_interfaces: </b> Possible binding to all interfaces.<br>
+    <b>Test ID:</b> B104<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/client/notebook.py" target="_blank">/opt/scanrepo/tensorflow/python/client/notebook.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_bind_all_interfaces.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_bind_all_interfaces.html</a><br>
+
+<div class="code">
+<pre>
+79	
+80	    if notebookapp.ip == "0.0.0.0":
+81	      proto = "https" if notebookapp.certfile else "http"
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-81">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/debug/cli/command_parser_test.py" target="_blank">/opt/scanrepo/tensorflow/python/debug/cli/command_parser_test.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+114	    self.assertEqual(["pt", "a:0"], args)
+115	    self.assertEqual(output_path, "/tmp/foo.txt")
+116	
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-82">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/debug/cli/command_parser_test.py" target="_blank">/opt/scanrepo/tensorflow/python/debug/cli/command_parser_test.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+118	    args, output_path = command_parser.extract_output_file_path(
+119	        ["pt", "a:0", "&gt;", "/tmp/foo.txt"])
+120	    self.assertEqual(["pt", "a:0"], args)
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-83">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/debug/cli/command_parser_test.py" target="_blank">/opt/scanrepo/tensorflow/python/debug/cli/command_parser_test.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+120	    self.assertEqual(["pt", "a:0"], args)
+121	    self.assertEqual(output_path, "/tmp/foo.txt")
+122	
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-84">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/debug/cli/command_parser_test.py" target="_blank">/opt/scanrepo/tensorflow/python/debug/cli/command_parser_test.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+131	    self.assertEqual(["pt", "a:0"], args)
+132	    self.assertEqual(output_path, "/tmp/foo.txt")
+133	
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-85">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/debug/cli/command_parser_test.py" target="_blank">/opt/scanrepo/tensorflow/python/debug/cli/command_parser_test.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+135	    args, output_path = command_parser.extract_output_file_path(
+136	        ["pt", "a:0&gt;", "/tmp/foo.txt"])
+137	    self.assertEqual(["pt", "a:0"], args)
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-86">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/debug/cli/command_parser_test.py" target="_blank">/opt/scanrepo/tensorflow/python/debug/cli/command_parser_test.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+137	    self.assertEqual(["pt", "a:0"], args)
+138	    self.assertEqual(output_path, "/tmp/foo.txt")
+139	
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-87">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Use of insecure and deprecated function (mktemp).<br>
+    <b>Test ID:</b> B306<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/debug/cli/curses_ui_test.py" target="_blank">/opt/scanrepo/tensorflow/python/debug/cli/curses_ui_test.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b306-mktemp_q" target="_blank">http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b306-mktemp_q</a><br>
+
+<div class="code">
+<pre>
+88	    self._command_history_store = debugger_cli_common.CommandHistory(
+89	        history_file_path=tempfile.mktemp())
+90	
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-88">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Use of insecure and deprecated function (mktemp).<br>
+    <b>Test ID:</b> B306<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/debug/cli/curses_ui_test.py" target="_blank">/opt/scanrepo/tensorflow/python/debug/cli/curses_ui_test.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b306-mktemp_q" target="_blank">http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b306-mktemp_q</a><br>
+
+<div class="code">
+<pre>
+1217	  def testWriteScreenOutputToFileWorks(self):
+1218	    output_path = tempfile.mktemp()
+1219	
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-89">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Use of insecure and deprecated function (mktemp).<br>
+    <b>Test ID:</b> B306<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/debug/cli/curses_ui_test.py" target="_blank">/opt/scanrepo/tensorflow/python/debug/cli/curses_ui_test.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b306-mktemp_q" target="_blank">http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b306-mktemp_q</a><br>
+
+<div class="code">
+<pre>
+1254	  def testAppendingRedirectErrors(self):
+1255	    output_path = tempfile.mktemp()
+1256	
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-90">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Use of insecure and deprecated function (mktemp).<br>
+    <b>Test ID:</b> B306<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/debug/cli/debugger_cli_common_test.py" target="_blank">/opt/scanrepo/tensorflow/python/debug/cli/debugger_cli_common_test.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b306-mktemp_q" target="_blank">http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b306-mktemp_q</a><br>
+
+<div class="code">
+<pre>
+252	
+253	    file_path = tempfile.mktemp()
+254	    screen_output.write_to_file(file_path)
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-91">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Use of insecure and deprecated function (mktemp).<br>
+    <b>Test ID:</b> B306<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/debug/cli/debugger_cli_common_test.py" target="_blank">/opt/scanrepo/tensorflow/python/debug/cli/debugger_cli_common_test.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b306-mktemp_q" target="_blank">http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b306-mktemp_q</a><br>
+
+<div class="code">
+<pre>
+924	  def setUp(self):
+925	    self._history_file_path = tempfile.mktemp()
+926	    self._cmd_hist = debugger_cli_common.CommandHistory(
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-92">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Use of possibly insecure function - consider using safer ast.literal_eval.<br>
+    <b>Test ID:</b> B307<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/debug/cli/evaluator.py" target="_blank">/opt/scanrepo/tensorflow/python/debug/cli/evaluator.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b307-eval" target="_blank">http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b307-eval</a><br>
+
+<div class="code">
+<pre>
+151	
+152	    return eval(rewritten_expression)  # pylint: disable=eval-used
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-93">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Use of insecure and deprecated function (mktemp).<br>
+    <b>Test ID:</b> B306<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/debug/cli/readline_ui_test.py" target="_blank">/opt/scanrepo/tensorflow/python/debug/cli/readline_ui_test.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b306-mktemp_q" target="_blank">http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b306-mktemp_q</a><br>
+
+<div class="code">
+<pre>
+37	        self, on_ui_exit=on_ui_exit,
+38	        config=cli_config.CLIConfig(config_file_path=tempfile.mktemp()))
+39	
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-94">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Use of insecure and deprecated function (mktemp).<br>
+    <b>Test ID:</b> B306<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/debug/cli/readline_ui_test.py" target="_blank">/opt/scanrepo/tensorflow/python/debug/cli/readline_ui_test.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b306-mktemp_q" target="_blank">http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b306-mktemp_q</a><br>
+
+<div class="code">
+<pre>
+151	  def testIncompleteRedirectWorks(self):
+152	    output_path = tempfile.mktemp()
+153	
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-95">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Use of possibly insecure function - consider using safer ast.literal_eval.<br>
+    <b>Test ID:</b> B307<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/debug/cli/stepper_cli.py" target="_blank">/opt/scanrepo/tensorflow/python/debug/cli/stepper_cli.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b307-eval" target="_blank">http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b307-eval</a><br>
+
+<div class="code">
+<pre>
+559	
+560	    tensor_value = eval(parsed.tensor_value_str)  # pylint: disable=eval-used
+561	
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-96">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/debug/examples/debug_mnist.py" target="_blank">/opt/scanrepo/tensorflow/python/debug/examples/debug_mnist.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+155	      type=str,
+156	      default="/tmp/mnist_data",
+157	      help="Directory for storing data")
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-97">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Audit url open for permitted schemes. Allowing use of file:/ or custom schemes is often unexpected.<br>
+    <b>Test ID:</b> B310<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/debug/examples/debug_tflearn_iris.py" target="_blank">/opt/scanrepo/tensorflow/python/debug/examples/debug_tflearn_iris.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b310-urllib_urlopen" target="_blank">http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b310-urllib_urlopen</a><br>
+
+<div class="code">
+<pre>
+55	    train_file = open(training_data_path, "wt")
+56	    urllib.request.urlretrieve(IRIS_TRAINING_DATA_URL, train_file.name)
+57	    train_file.close()
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-98">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Audit url open for permitted schemes. Allowing use of file:/ or custom schemes is often unexpected.<br>
+    <b>Test ID:</b> B310<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/debug/examples/debug_tflearn_iris.py" target="_blank">/opt/scanrepo/tensorflow/python/debug/examples/debug_tflearn_iris.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b310-urllib_urlopen" target="_blank">http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b310-urllib_urlopen</a><br>
+
+<div class="code">
+<pre>
+63	    test_file = open(test_data_path, "wt")
+64	    urllib.request.urlretrieve(IRIS_TEST_DATA_URL, test_file.name)
+65	    test_file.close()
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-99">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/debug/examples/debug_tflearn_iris.py" target="_blank">/opt/scanrepo/tensorflow/python/debug/examples/debug_tflearn_iris.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+150	      type=str,
+151	      default="/tmp/iris_data",
+152	      help="Directory to save the training and test data in.")
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-100">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/debug/lib/debug_data_test.py" target="_blank">/opt/scanrepo/tensorflow/python/debug/lib/debug_data_test.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+113	  def testDebugDatum(self):
+114	    dump_root = "/tmp/tfdbg_1"
+115	    debug_dump_rel_path = (
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-101">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/debug/lib/debug_data_test.py" target="_blank">/opt/scanrepo/tensorflow/python/debug/lib/debug_data_test.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+143	  def testDumpSizeBytesIsNoneForNonexistentFilePath(self):
+144	    dump_root = "/tmp/tfdbg_1"
+145	    debug_dump_rel_path = "ns1/ns2/node_foo_1_2_DebugIdentity_1472563253536385"
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-102">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Use of insecure and deprecated function (mktemp).<br>
+    <b>Test ID:</b> B306<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/debug/lib/debug_data_test.py" target="_blank">/opt/scanrepo/tensorflow/python/debug/lib/debug_data_test.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b306-mktemp_q" target="_blank">http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b306-mktemp_q</a><br>
+
+<div class="code">
+<pre>
+153	  def setUp(self):
+154	    self._dump_root = tempfile.mktemp()
+155	    os.mkdir(self._dump_root)
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-103">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Use of insecure and deprecated function (mktemp).<br>
+    <b>Test ID:</b> B306<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/debug/lib/debug_data_test.py" target="_blank">/opt/scanrepo/tensorflow/python/debug/lib/debug_data_test.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b306-mktemp_q" target="_blank">http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b306-mktemp_q</a><br>
+
+<div class="code">
+<pre>
+185	    with self.assertRaisesRegexp(IOError, "does not exist"):
+186	      debug_data.DebugDumpDir(tempfile.mktemp() + "_foo")
+187	
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-104">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Use of insecure MD2, MD4, or MD5 hash function.<br>
+    <b>Test ID:</b> B303<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/debug/lib/grpc_debug_test_server.py" target="_blank">/opt/scanrepo/tensorflow/python/debug/lib/grpc_debug_test_server.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b303-md5" target="_blank">http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b303-md5</a><br>
+
+<div class="code">
+<pre>
+184	    encoded_graph_def = graph_def.SerializeToString()
+185	    graph_hash = int(hashlib.md5(encoded_graph_def).hexdigest(), 16)
+186	    event = event_pb2.Event(graph_def=encoded_graph_def, wall_time=wall_time)
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-105">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Use of insecure and deprecated function (mktemp).<br>
+    <b>Test ID:</b> B306<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/debug/lib/source_utils_test.py" target="_blank">/opt/scanrepo/tensorflow/python/debug/lib/source_utils_test.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b306-mktemp_q" target="_blank">http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b306-mktemp_q</a><br>
+
+<div class="code">
+<pre>
+205	    # Create an unrelated source file.
+206	    unrelated_source_path = tempfile.mktemp()
+207	    with open(unrelated_source_path, "wt") as source_file:
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-106">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Use of insecure and deprecated function (mktemp).<br>
+    <b>Test ID:</b> B306<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/debug/wrappers/local_cli_wrapper.py" target="_blank">/opt/scanrepo/tensorflow/python/debug/wrappers/local_cli_wrapper.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b306-mktemp_q" target="_blank">http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b306-mktemp_q</a><br>
+
+<div class="code">
+<pre>
+82	    if not dump_root:
+83	      self._dump_root = tempfile.mktemp(prefix=_DUMP_ROOT_PREFIX)
+84	    else:
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-107">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Use of insecure and deprecated function (mktemp).<br>
+    <b>Test ID:</b> B306<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/debug/wrappers/local_cli_wrapper_test.py" target="_blank">/opt/scanrepo/tensorflow/python/debug/wrappers/local_cli_wrapper_test.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b306-mktemp_q" target="_blank">http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b306-mktemp_q</a><br>
+
+<div class="code">
+<pre>
+125	  def setUp(self):
+126	    self._tmp_dir = tempfile.mktemp()
+127	
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-108">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/estimator/estimator_test.py" target="_blank">/opt/scanrepo/tensorflow/python/estimator/estimator_test.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+73	
+74	_TMP_DIR = '/tmp'
+75	_ANOTHER_TMP_DIR = '/another_tmp'
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-109">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/estimator/run_config_test.py" target="_blank">/opt/scanrepo/tensorflow/python/estimator/run_config_test.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+1052	    tf_config = {
+1053	        'model_dir': '/tmp/123',
+1054	    }
+1055	    run_config = _create_run_config_with_cluster_spec(tf_config)
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-110">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/estimator/run_config_test.py" target="_blank">/opt/scanrepo/tensorflow/python/estimator/run_config_test.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+1072	  def test_model_dir_in_constructor(self):
+1073	    run_config = run_config_lib.RunConfig(model_dir='/tmp/123')
+1074	    self.assertEqual('/tmp/123', run_config.model_dir)
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-111">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/estimator/run_config_test.py" target="_blank">/opt/scanrepo/tensorflow/python/estimator/run_config_test.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+1073	    run_config = run_config_lib.RunConfig(model_dir='/tmp/123')
+1074	    self.assertEqual('/tmp/123', run_config.model_dir)
+1075	
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-112">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/estimator/run_config_test.py" target="_blank">/opt/scanrepo/tensorflow/python/estimator/run_config_test.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+1077	    tf_config = {
+1078	        'model_dir': '/tmp/123',
+1079	    }
+1080	    run_config = _create_run_config_with_cluster_spec(tf_config)
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-113">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/estimator/run_config_test.py" target="_blank">/opt/scanrepo/tensorflow/python/estimator/run_config_test.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+1080	    run_config = _create_run_config_with_cluster_spec(tf_config)
+1081	    self.assertEqual('/tmp/123', run_config.model_dir)
+1082	
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-114">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/estimator/run_config_test.py" target="_blank">/opt/scanrepo/tensorflow/python/estimator/run_config_test.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+1083	  def test_model_dir_both_set_in_both_constructor_and_tf_config(self):
+1084	    model_dir = '/tmp/123'
+1085	    tf_config = {'model_dir': model_dir}
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-115">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/estimator/run_config_test.py" target="_blank">/opt/scanrepo/tensorflow/python/estimator/run_config_test.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+1087	    run_config = _create_run_config_with_cluster_spec(tf_config, **kwargs)
+1088	    self.assertEqual('/tmp/123', run_config.model_dir)
+1089	
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-116">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/estimator/run_config_test.py" target="_blank">/opt/scanrepo/tensorflow/python/estimator/run_config_test.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+1090	  def test_model_dir_different_in_both_constructor_and_tf_config(self):
+1091	    tf_config = {'model_dir': '/tmp/123'}
+1092	    kwargs = {'model_dir': '/tmp/456'}
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-117">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/estimator/run_config_test.py" target="_blank">/opt/scanrepo/tensorflow/python/estimator/run_config_test.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+1091	    tf_config = {'model_dir': '/tmp/123'}
+1092	    kwargs = {'model_dir': '/tmp/456'}
+1093	    with self.assertRaisesRegexp(ValueError, _MODEL_DIR_MISMATCH_ERR):
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-118">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/estimator/warm_starting_util_test.py" target="_blank">/opt/scanrepo/tensorflow/python/estimator/warm_starting_util_test.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+988	    # List of PartitionedVariable is invalid type when warmstarting with vocab.
+989	    self.assertRaises(TypeError, ws_util._warmstart_var_with_vocab, [x], "/tmp",
+990	                      5, "/tmp", "/tmp")
+991	    # Keys of type other than FeatureColumn.
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-119">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/estimator/warm_starting_util_test.py" target="_blank">/opt/scanrepo/tensorflow/python/estimator/warm_starting_util_test.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+989	    self.assertRaises(TypeError, ws_util._warmstart_var_with_vocab, [x], "/tmp",
+990	                      5, "/tmp", "/tmp")
+991	    # Keys of type other than FeatureColumn.
+992	    self.assertRaises(TypeError, ws_util._warmstart,
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-120">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/estimator/warm_starting_util_test.py" target="_blank">/opt/scanrepo/tensorflow/python/estimator/warm_starting_util_test.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+989	    self.assertRaises(TypeError, ws_util._warmstart_var_with_vocab, [x], "/tmp",
+990	                      5, "/tmp", "/tmp")
+991	    # Keys of type other than FeatureColumn.
+992	    self.assertRaises(TypeError, ws_util._warmstart,
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-121">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/estimator/warm_starting_util_test.py" target="_blank">/opt/scanrepo/tensorflow/python/estimator/warm_starting_util_test.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+992	    self.assertRaises(TypeError, ws_util._warmstart,
+993	                      {"StringType": x}, ws_util._WarmStartSettings("/tmp"))
+994	
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-122">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Use of possibly insecure function - consider using safer ast.literal_eval.<br>
+    <b>Test ID:</b> B307<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/framework/dtypes_test.py" target="_blank">/opt/scanrepo/tensorflow/python/framework/dtypes_test.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b307-eval" target="_blank">http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b307-eval</a><br>
+
+<div class="code">
+<pre>
+289	      import tensorflow as tf
+290	      dtype2 = eval(repr(dtype))
+291	      self.assertEquals(type(dtype2), dtypes.DType)
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-123">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Use of insecure MD2, MD4, or MD5 hash function.<br>
+    <b>Test ID:</b> B303<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/framework/load_library.py" target="_blank">/opt/scanrepo/tensorflow/python/framework/load_library.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b303-md5" target="_blank">http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b303-md5</a><br>
+
+<div class="code">
+<pre>
+67	  # Get a unique name for the module.
+68	  module_name = hashlib.md5(wrappers).hexdigest()
+69	  if module_name in sys.modules:
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-124">
+<div class="issue-block issue-sev-medium">
+    <b>exec_used: </b> Use of exec detected.<br>
+    <b>Test ID:</b> B102<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/framework/load_library.py" target="_blank">/opt/scanrepo/tensorflow/python/framework/load_library.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/exec_used.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/exec_used.html</a><br>
+
+<div class="code">
+<pre>
+72	  # pylint: disable=exec-used
+73	  exec(wrappers, module.__dict__)
+74	  # Stash away the library handle for making calls into the dynamic library.
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-125">
+<div class="issue-block issue-sev-medium">
+    <b>yaml_load: </b> Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().<br>
+    <b>Test ID:</b> B506<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/keras/_impl/keras/models.py" target="_blank">/opt/scanrepo/tensorflow/python/keras/_impl/keras/models.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/yaml_load.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/yaml_load.html</a><br>
+
+<div class="code">
+<pre>
+343	    raise ImportError('Requires yaml module installed.')
+344	  config = yaml.load(yaml_string)
+345	  return layer_module.deserialize(config, custom_objects=custom_objects)
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-126">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Use of insecure MD2, MD4, or MD5 hash function.<br>
+    <b>Test ID:</b> B303<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/keras/_impl/keras/preprocessing/text.py" target="_blank">/opt/scanrepo/tensorflow/python/keras/_impl/keras/preprocessing/text.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b303-md5" target="_blank">http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b303-md5</a><br>
+
+<div class="code">
+<pre>
+105	  elif hash_function == 'md5':
+106	    hash_function = lambda w: int(md5(w.encode()).hexdigest(), 16)
+107	
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-127">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Audit url open for permitted schemes. Allowing use of file:/ or custom schemes is often unexpected.<br>
+    <b>Test ID:</b> B310<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/keras/_impl/keras/utils/data_utils.py" target="_blank">/opt/scanrepo/tensorflow/python/keras/_impl/keras/utils/data_utils.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b310-urllib_urlopen" target="_blank">http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b310-urllib_urlopen</a><br>
+
+<div class="code">
+<pre>
+83	
+84	    response = urlopen(url, data)
+85	    with open(filename, 'wb') as fd:
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-128">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/keras/_impl/keras/utils/data_utils.py" target="_blank">/opt/scanrepo/tensorflow/python/keras/_impl/keras/utils/data_utils.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+194	  if not os.access(datadir_base, os.W_OK):
+195	    datadir_base = os.path.join('/tmp', '.keras')
+196	  datadir = os.path.join(datadir_base, cache_subdir)
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-129">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Audit url open for permitted schemes. Allowing use of file:/ or custom schemes is often unexpected.<br>
+    <b>Test ID:</b> B310<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/keras/_impl/keras/utils/data_utils.py" target="_blank">/opt/scanrepo/tensorflow/python/keras/_impl/keras/utils/data_utils.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b310-urllib_urlopen" target="_blank">http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b310-urllib_urlopen</a><br>
+
+<div class="code">
+<pre>
+237	      try:
+238	        urlretrieve(origin, fpath, dl_progress)
+239	      except URLError as e:
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-130">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Use of insecure MD2, MD4, or MD5 hash function.<br>
+    <b>Test ID:</b> B303<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/keras/_impl/keras/utils/data_utils.py" target="_blank">/opt/scanrepo/tensorflow/python/keras/_impl/keras/utils/data_utils.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b303-md5" target="_blank">http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b303-md5</a><br>
+
+<div class="code">
+<pre>
+282	  else:
+283	    hasher = hashlib.md5()
+284	
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-131">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Deserialization with the marshal module is possibly dangerous.<br>
+    <b>Test ID:</b> B302<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/keras/_impl/keras/utils/generic_utils.py" target="_blank">/opt/scanrepo/tensorflow/python/keras/_impl/keras/utils/generic_utils.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b302-marshal" target="_blank">http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b302-marshal</a><br>
+
+<div class="code">
+<pre>
+252	  raw_code = codecs.decode(code.encode('ascii'), 'base64')
+253	  code = marshal.loads(raw_code)
+254	  if globs is None:
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-132">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Use of insecure MD2, MD4, or MD5 hash function.<br>
+    <b>Test ID:</b> B303<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/ops/data_flow_ops.py" target="_blank">/opt/scanrepo/tensorflow/python/ops/data_flow_ops.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b303-md5" target="_blank">http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b303-md5</a><br>
+
+<div class="code">
+<pre>
+667	      string = (str(seed1) + shared_name).encode("utf-8")
+668	      seed2 = int(hashlib.md5(string).hexdigest()[:8], 16) &amp; 0x7FFFFFFF
+669	    queue_ref = gen_data_flow_ops._random_shuffle_queue_v2(
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-133">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Use of insecure MD2, MD4, or MD5 hash function.<br>
+    <b>Test ID:</b> B303<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/ops/distributions/util.py" target="_blank">/opt/scanrepo/tensorflow/python/ops/distributions/util.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b303-md5" target="_blank">http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b303-md5</a><br>
+
+<div class="code">
+<pre>
+789	  string = (str(seed) + salt).encode("utf-8")
+790	  return int(hashlib.md5(string).hexdigest()[:8], 16) &amp; 0x7FFFFFFF
+791	
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-134">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Use of insecure MD2, MD4, or MD5 hash function.<br>
+    <b>Test ID:</b> B303<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/ops/rnn_cell_impl.py" target="_blank">/opt/scanrepo/tensorflow/python/ops/rnn_cell_impl.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b303-md5" target="_blank">http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b303-md5</a><br>
+
+<div class="code">
+<pre>
+979	    string = (str(self._seed) + salt).encode("utf-8")
+980	    return int(hashlib.md5(string).hexdigest()[:8], 16) &amp; 0x7FFFFFFF
+981	
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-135">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/profiler/model_analyzer_test.py" target="_blank">/opt/scanrepo/tensorflow/python/profiler/model_analyzer_test.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+784	
+785	      with gfile.Open('/tmp/eager_profile', 'wb') as f:
+786	        profile_pb = tfprof_log_pb2.ProfileProto()
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-136">
+<div class="issue-block issue-sev-medium">
+    <b>blacklist: </b> Use of possibly insecure function - consider using safer ast.literal_eval.<br>
+    <b>Test ID:</b> B307<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/python/tools/saved_model_cli.py" target="_blank">/opt/scanrepo/tensorflow/python/tools/saved_model_cli.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b307-eval" target="_blank">http://docs.openstack.org/developer/bandit/blacklists/blacklist_calls.html#b307-eval</a><br>
+
+<div class="code">
+<pre>
+483	    # ast.literal_eval does not work with numpy expressions
+484	    tensor_key_feed_dict[input_tensor_key] = eval(py_expr)  # pylint: disable=eval-used
+485	
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-137">
+<div class="issue-block issue-sev-high">
+    <b>subprocess_popen_with_shell_equals_true: </b> subprocess call with shell=True identified, security issue.<br>
+    <b>Test ID:</b> B602<br>
+    <b>Severity: </b>HIGH<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/tools/ci_build/copy_binary.py" target="_blank">/opt/scanrepo/tensorflow/tools/ci_build/copy_binary.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/subprocess_popen_with_shell_equals_true.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/subprocess_popen_with_shell_equals_true.html</a><br>
+
+<div class="code">
+<pre>
+74	                                                 new_py_ver, package, version),
+75	      shell=True)
+76	  zout = zipfile.ZipFile(directory + new_binary, "w", zipfile.ZIP_DEFLATED)
+77	  zip_these_files = [
+78	      "%s-%s.dist-info" % (package, version),
+79	      "%s-%s.data" % (package, version)
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-138">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/tools/dist_test/python/census_widendeep.py" target="_blank">/opt/scanrepo/tensorflow/tools/dist_test/python/census_widendeep.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+264	      type=str,
+265	      default="/tmp/census-data",
+266	      help="Directory for storing the census data")
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-139">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/tools/dist_test/python/census_widendeep.py" target="_blank">/opt/scanrepo/tensorflow/tools/dist_test/python/census_widendeep.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+269	      type=str,
+270	      default="/tmp/census_wide_and_deep_model",
+271	      help="Directory for storing the model"
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-140">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/tensorflow/tools/dist_test/python/mnist_replica.py" target="_blank">/opt/scanrepo/tensorflow/tools/dist_test/python/mnist_replica.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+49	flags = tf.app.flags
+50	flags.DEFINE_string("data_dir", "/tmp/mnist-data",
+51	                    "Directory for storing mnist data")
+52	flags.DEFINE_boolean("download_only", False,
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-141">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/third_party/examples/eager/spinn/spinn.py" target="_blank">/opt/scanrepo/third_party/examples/eager/spinn/spinn.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+670	      "TensorFlow eager implementation of the SPINN SNLI classifier.")
+671	  parser.add_argument("--data_root", type=str, default="/tmp/spinn-data",
+672	                      help="Root directory in which the training data and "
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-142">
+<div class="issue-block issue-sev-medium">
+    <b>hardcoded_tmp_directory: </b> Probable insecure usage of temp file/directory.<br>
+    <b>Test ID:</b> B108<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>MEDIUM<br>
+    <b>File: </b><a href="/opt/scanrepo/third_party/examples/eager/spinn/spinn.py" target="_blank">/opt/scanrepo/third_party/examples/eager/spinn/spinn.py</a> <br>
+    <b>More info: </b><a href="http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html" target="_blank">http://docs.openstack.org/developer/bandit/plugins/hardcoded_tmp_directory.html</a><br>
+
+<div class="code">
+<pre>
+677	                      "The default of -1 means unlimited.")
+678	  parser.add_argument("--logdir", type=str, default="/tmp/spinn-logs",
+679	                      help="Directory in which summaries will be written for "
+</pre>
+</div>
+
+
+</div>
+</div>
+
+</div>
+
+</body>
+</html>
